@@ -6,11 +6,12 @@
 }
 
 .login-minimal {
-    padding: 80px 20px;
+    padding: 100px 20px;
     display: flex;
     justify-content: center;
     position: relative;
     z-index: 10;
+    background: linear-gradient(to bottom, transparent, rgba(255, 0, 255, 0.05), transparent);
 }
 
 .login-center {

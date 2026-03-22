@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { HiMagnifyingGlass, HiShieldCheck, HiChartBar, HiSparkles, HiArrowRight } from 'react-icons/hi2';
-import './Dashboard.css';
+import GraphWidgetMockup from '../components/GraphWidgetMockup';
 
 const stats = [
     { value: '12.4M', label: 'Articles Verified', color: 'var(--primary)' },
@@ -25,8 +25,6 @@ const item = {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
-
-import GraphWidgetMockup from '../components/GraphWidgetMockup';
 
 export default function Dashboard() {
     const navigate = useNavigate();

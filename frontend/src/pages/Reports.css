@@ -1,0 +1,146 @@
+.reports-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.reports-subtitle {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.reports-empty {
+    padding: 60px 28px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Selector */
+.report-selector {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.report-chip {
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.2s;
+}
+
+.report-chip.active {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+}
+
+.report-chip:not(.active):hover {
+    border-color: var(--primary);
+    color: var(--text-color);
+}
+
+/* Charts */
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.chart-card {
+    padding: 24px;
+}
+
+.chart-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+.chart-wide {
+    grid-column: 1 / -1;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 260px;
+}
+
+.doughnut-wrapper {
+    height: 200px;
+}
+
+.bar-wrapper {
+    height: 220px;
+}
+
+.score-legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.score-legend div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Report detail */
+.report-detail {
+    padding: 24px;
+}
+
+.report-detail h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.report-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-glass);
+    font-size: 0.9rem;
+}
+
+.report-row span:first-child {
+    color: var(--text-secondary);
+}
+
+.report-value {
+    font-weight: 700;
+}
+
+.report-conclusion {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+}

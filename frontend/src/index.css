@@ -55,6 +55,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
@@ -62,6 +66,10 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 /* Glassmorphism Utilities */

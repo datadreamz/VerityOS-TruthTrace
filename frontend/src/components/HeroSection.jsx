@@ -28,10 +28,16 @@ export default function HeroSection() {
                             placeholder="Paste a news article URL or snippet..."
                             className="search-input"
                         />
-                        <button className="btn-primary analyze-btn">
+                        <button className="btn-primary analyze-btn" onClick={() => document.getElementById('login-section')?.scrollIntoView({ behavior: 'smooth' })}>
                             Analyze <HiArrowRight size={18} />
                         </button>
                     </div>
+                </div>
+
+                <div className="mt-6 animate-fade-in delay-5">
+                    <button className="btn-secondary" onClick={() => document.getElementById('login-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                        Already a user? Sign In
+                    </button>
                 </div>
 
                 <div className="hero-stats animate-fade-in delay-5">

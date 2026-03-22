@@ -5,6 +5,20 @@
     overflow: hidden;
 }
 
+.login-minimal {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.login-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .login-left {
     flex: 1;
     display: flex;

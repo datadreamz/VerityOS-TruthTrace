@@ -56,7 +56,7 @@ export default function App() {
                         <Navbar onLogout={handleLogout} theme={theme} toggleTheme={toggleTheme} hideLinks={true} />
                         <HeroSection />
                         <FeatureCards />
-                        <Login onLogin={handleLogin} />
+                        <Login onLogin={handleLogin} minimal={true} />
                         <Footer />
                     </div>
                 ) : (

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { HiEnvelope, HiLockClosed, HiEye, HiEyeSlash } from 'react-icons/hi2';
 import './Login.css';
 
-export default function Login({ onLogin }) {
+export default function Login({ onLogin, minimal = false }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPw, setShowPw] = useState(false);
@@ -18,57 +18,61 @@ export default function Login({ onLogin }) {
     };
 
     return (
-        <div className="login-page">
-            <div className="login-left">
-                <motion.div
-                    className="login-hero"
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <div className="hero-illustration">
-                        <div className="hero-grid">
-                            {Array.from({ length: 9 }).map((_, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="hero-node"
-                                    animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.8, 0.3] }}
-                                    transition={{ duration: 2 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
-                                />
-                            ))}
+        <div className={minimal ? 'login-minimal' : 'login-page'}>
+            {!minimal && (
+                <div className="login-left">
+                    <motion.div
+                        className="login-hero"
+                        initial={{ opacity: 0, x: -40 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <div className="hero-illustration">
+                            <div className="hero-grid">
+                                {Array.from({ length: 9 }).map((_, i) => (
+                                    <motion.div
+                                        key={i}
+                                        className="hero-node"
+                                        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.8, 0.3] }}
+                                        transition={{ duration: 2 + i * 0.3, repeat: Infinity, ease: 'easeInOut' }}
+                                    />
+                                ))}
+                            </div>
+                            <div className="hero-connections">
+                                {Array.from({ length: 6 }).map((_, i) => (
+                                    <motion.div
+                                        key={i}
+                                        className="hero-line"
+                                        style={{ '--angle': `${i * 60}deg` }}
+                                        animate={{ opacity: [0.1, 0.5, 0.1] }}
+                                        transition={{ duration: 3 + i * 0.5, repeat: Infinity }}
+                                    />
+                                ))}
+                            </div>
                         </div>
-                        <div className="hero-connections">
-                            {Array.from({ length: 6 }).map((_, i) => (
-                                <motion.div
-                                    key={i}
-                                    className="hero-line"
-                                    style={{ '--angle': `${i * 60}deg` }}
-                                    animate={{ opacity: [0.1, 0.5, 0.1] }}
-                                    transition={{ duration: 3 + i * 0.5, repeat: Infinity }}
-                                />
-                            ))}
-                        </div>
-                    </div>
-                    <h2 className="hero-tagline">
-                        <span className="gradient-text">Truth, verified by intelligence.</span>
-                    </h2>
-                    <p className="hero-sub">Multi-layer AI detection for news, images, and media credibility.</p>
-                </motion.div>
-            </div>
+                        <h2 className="hero-tagline">
+                            <span className="gradient-text">Truth, verified by intelligence.</span>
+                        </h2>
+                        <p className="hero-sub">Multi-layer AI detection for news, images, and media credibility.</p>
+                    </motion.div>
+                </div>
+            )}
 
-            <div className="login-right">
+            <div className={minimal ? 'login-center' : 'login-right'}>
                 <motion.div
                     className="login-card glass-card"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <div className="login-brand">
-                        <span className="brand-icon-lg">✓</span>
-                        <h1>VerityOS</h1>
-                    </div>
-                    <h2 className="login-title">Welcome back</h2>
-                    <p className="login-subtitle">Sign in to continue your analysis</p>
+                    {!minimal && (
+                        <div className="login-brand">
+                            <span className="brand-icon-lg">✓</span>
+                            <h1>VerityOS</h1>
+                        </div>
+                    )}
+                    <h2 className="login-title">{minimal ? 'Ready to Start?' : 'Welcome back'}</h2>
+                    <p className="login-subtitle">{minimal ? 'Sign in to access the full analysis suite' : 'Sign in to continue your analysis'}</p>
 
                     <form onSubmit={handleSubmit} className="login-form">
                         <div className="input-group">
